@@ -1,0 +1,37 @@
+ID: Company
+_schema-version: '2.1'
+version: 0.0.1
+modules:
+  - name: Company-db
+    type: com.sap.xs.hdi-dynamic
+    path: db
+    parameters:
+      memory: 256M
+      disk-quota: 256M
+    requires:
+      - name: managed-hana-hdi
+        properties:
+          TARGET_CONTAINER: managed-hana-hdi
+      
+  - name: Company-srv
+    type: java
+    path: srv
+    parameters:
+      memory: 1024M
+    provides:
+      - name: srv_api
+        properties:
+          url: '${default-url}'
+    requires:
+      - name: managed-hana-hdi
+        properties:
+          JBP_CONFIG_RESOURCE_CONFIGURATION: '[tomcat/webapps/ROOT/META-INF/context.xml: {"service_name_for_DefaultDB" : "~{mt-hdi-instance-manager-name}"}]'
+          
+resources:
+  - name: managed-hana-hdi
+    type: org.cloudfoundry.managed-service
+    properties:
+      mt-hdi-instance-manager-name: '${service-name}'
+    parameters:
+      service: managed-hana
+      service-plan: hdi-shared

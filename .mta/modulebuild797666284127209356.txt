@@ -1,0 +1,72 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Company-srv 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- exec-maven-plugin:1.6.0:exec (npm install) @ Company-srv ---
+up to date in 1.718s
+[INFO] 
+[INFO] --- exec-maven-plugin:1.6.0:exec (npm cds build/all) @ Company-srv ---
+
+> Company@1.0.0 build C:\Users\I323519\OneDrive - SAP SE\downloads\Company
+> cds build/all --clean
+
+
+[cds] - cds [3.30.0], compiler [1.23.1], home [C:\Users\I323519\OneDrive - SAP SE\downloads\Company\node_modules\@sap\cds]
+
+{
+  "build": {
+    "target": ".",
+    "tasks": [
+      {"for":"hana","src":"db","options":{"model":["db","srv"]}},
+      {"for":"java-cf","src":"srv","options":{"model":["db","srv"]}}
+    ]
+  }
+}
+
+[cds] - building project [C:\Users\I323519\OneDrive - SAP SE\downloads\Company], clean [true]
+
+[cds] - building module [db] using [Hana DB Module Builder]
+[cds] - no model found, skip build
+
+[cds] - building module [srv] using [Java CF Module Builder]
+[cds] - no model found, skip build
+
+[cds] - done > wrote output to:
+[cds] - time: 27.742ms
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ Company-srv ---
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ Company-srv ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ Company-srv ---
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory C:\Users\I323519\OneDrive - SAP SE\downloads\Company\srv\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ Company-srv ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ Company-srv ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- maven-war-plugin:2.4:war (default-war) @ Company-srv ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [Company-srv] in [C:\Users\I323519\OneDrive - SAP SE\downloads\Company\srv\target\Company-srv-1.0-SNAPSHOT]
+[INFO] Processing war project
+[INFO] Copying webapp webResources [C:\Users\I323519\OneDrive - SAP SE\downloads\Company\srv\src/main/webapp] to [C:\Users\I323519\OneDrive - SAP SE\downloads\Company\srv\target\Company-srv-1.0-SNAPSHOT]
+[INFO] Copying webapp resources [C:\Users\I323519\OneDrive - SAP SE\downloads\Company\srv\src\main\webapp]
+[INFO] Webapp assembled in [1446 msecs]
+[INFO] Building war: C:\Users\I323519\OneDrive - SAP SE\downloads\Company\srv\target\Company-srv-1.0-SNAPSHOT.war
+[INFO] Packaging classes
+[INFO] Building jar: C:\Users\I323519\OneDrive - SAP SE\downloads\Company\srv\target\Company-srv-1.0-SNAPSHOT-classes.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 17.573 s
+[INFO] Finished at: 2020-02-13T10:19:28+05:30
+[INFO] Final Memory: 23M/251M
+[INFO] ------------------------------------------------------------------------
